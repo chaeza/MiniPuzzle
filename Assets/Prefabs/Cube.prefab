@@ -129,9 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   canMove: 0
-  moveSpeed: 0
-  leftPos: {fileID: 0}
-  rightPos: {fileID: 0}
+  moveSpeed: 1
+  leftPos: {fileID: 5280308804366473480, guid: 6c7c76ccd5b07f14c87b3fca1b5a6736, type: 3}
+  rightPos: {fileID: 6101718608525267507, guid: 0bb72938615e0cc42b82d50655091bce, type: 3}
   targetPos: {fileID: 0}
   PlayerInput: {fileID: 0}
   rigidbody: {fileID: 0}

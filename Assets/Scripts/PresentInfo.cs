@@ -13,12 +13,14 @@ public class PresentInfo : MonoBehaviour
     [SerializeField] private bool canMove;
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject leftPos;
-    [SerializeField] private GameObject rightPos;
-    [SerializeField] private GameObject targetPos;
+    [SerializeField] private GameObject rightPos; 
     [SerializeField] private PlayerInput PlayerInput;
     [SerializeField] private Rigidbody rigidbody;
+    private GameObject targetPos;
     private void Start()
     {
+        leftPos = GameObject.FindGameObjectWithTag("LeftPos");
+        rightPos = GameObject.FindGameObjectWithTag("RightPos");
         rigidbody = GetComponent<Rigidbody>();
         PlayerInput = FindObjectOfType<PlayerInput>();
         PlayerInput.del_PlayerClick = PresentDir;
@@ -31,14 +33,22 @@ public class PresentInfo : MonoBehaviour
     {
         if (other.tag == "CheckPoint")
         {
+            Debug.Log("닿았다");
             canMove = true;
         }
     }
     //CheckPoint의 PlayerInput Script에서 호출 
     public void PresentDir(string dir)
     {
-        if (dir == "Right") targetPos = rightPos;
-        else if (dir == "Left") targetPos = leftPos;
+        if (dir == "Right") {
+            targetPos = rightPos;
+            Debug.Log(targetPos);
+        }
+        else if (dir == "Left")
+        {
+            targetPos = leftPos;
+            Debug.Log(targetPos);
+        } 
         else Debug.Log("It is not selected value ");
         PresentMove();
     }

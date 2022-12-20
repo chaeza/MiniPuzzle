@@ -14,9 +14,6 @@ public class GameLogic : MonoBehaviour
 
     //활성화되어있는 큐브들
     private List<GameObject> cubes = new List<GameObject>();
-
-
-
     // Start is called before the first frame update
     void Start()
     {   

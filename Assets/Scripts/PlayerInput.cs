@@ -6,7 +6,11 @@ public class PlayerInput : MonoBehaviour
 {
     public delegate void Del_PlayerClick(string dir);
     public Del_PlayerClick del_PlayerClick;
-    public bool canClick = true;
+    public bool canClick ;
+    private void Start()
+    {
+        canClick=true;
+    }
     void Update()
     {
         if (canClick==false) return;
