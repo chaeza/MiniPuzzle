@@ -12,7 +12,8 @@ public class GameLogic : MonoBehaviour
     //아이템 풀을 담을 큐
     Queue<GameObject> itemQueue = new Queue<GameObject>();
 
-    private List<GameObject> cubes = null;
+    //활성화되어있는 큐브들
+    private List<GameObject> cubes = new List<GameObject>();
 
 
 
@@ -37,7 +38,7 @@ public class GameLogic : MonoBehaviour
             GameObject cube = itemQueue.Dequeue();
             //활성화시키고
             cube.SetActive(true);
-            cubes[i] = cube;
+            cubes.Add(cube);
             // 아이템의 위치를 잡아준다
             cube.transform.position = spawnPoints[i].transform.position;
         }
