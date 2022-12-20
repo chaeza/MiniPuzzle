@@ -2,20 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMgr : MonoBehaviour
+public class GameMGR : MonoBehaviour
 {
-    private static GameMgr _instance;
-    public static GameMgr instance
+    private static GameMGR instance;
+    public static GameMGR _instance
     {
-        get 
+        get
         {
-            if(_instance == null)
+            if (instance == null)
             {
-                GameMgr gameMgr = GameObject.FindObjectOfType<GameMgr>();
-                if(gameMgr == null)
-                    gameMgr = new GameObject("GameMgr").AddComponent<GameMgr>();
+                GameMGR NewGameMGr = FindObjectOfType<GameMGR>();
+                if (NewGameMGr == null)
+                    instance = new GameObject("GameMgr").AddComponent<GameMGR>();
+                else
+                    instance = NewGameMGr; 
             }
-            return _instance; 
+            return _instance;
         }
     }
 }
