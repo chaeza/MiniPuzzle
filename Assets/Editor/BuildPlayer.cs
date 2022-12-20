@@ -11,7 +11,7 @@ public class BuildPlayer : MonoBehaviour
     {
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
         buildPlayerOptions.scenes = new[] { "Assets/Scenes/LobbyScene.unity", "Assets/Scenes/MultiMode.unity", "Assets/Scenes/SingleMode.unity", "Assets/Scenes/TestScene.unity" };
-        buildPlayerOptions.locationPathName = "MiniPuzzle_1chance.exe";
+        buildPlayerOptions.locationPathName = "BuildT/MiniPuzzle_1chance.exe";
         //buildPlayerOptions.locationPathName = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         buildPlayerOptions.target = BuildTarget.StandaloneWindows64;
         buildPlayerOptions.options = BuildOptions.None;
